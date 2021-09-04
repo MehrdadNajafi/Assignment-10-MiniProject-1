@@ -112,5 +112,5 @@ class Film(Media):
 film_object = []
 for i in range(len(my_data)):
     if my_data[i]['type'] == 'film':
-        new_object = Media(my_data[i]['type'], my_data[i]['id'], my_data[i]['name'], my_data[i]['director'], my_data[i]['imdb'], my_data[i]['url'], my_data[i]['duration'], my_data[i]['casts'])
+        new_object = Film(my_data[i]['type'], my_data[i]['id'], my_data[i]['name'], my_data[i]['director'], my_data[i]['imdb'], my_data[i]['url'], my_data[i]['duration'], my_data[i]['casts'])
         film_object.append(new_object)
