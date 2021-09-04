@@ -65,7 +65,7 @@ def Exit_Program():
             STR = type + ',' + str(id) + ',' + name + ',' + director + ',' + str(imdb) + ',' + url + ',' + str(duration) + ',' + episodes + ',' + final_casts + '\n'   
             final_str += STR
     except:
-        print("Can't upload Film data, Because its empty")
+        print("Can't upload Series data, Because its empty")
 
     try:
         for i in range(len(documentary.doc_object)):
