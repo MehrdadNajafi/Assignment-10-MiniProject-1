@@ -2,7 +2,13 @@ import media
 from media import Media
 from media import my_data
 
+def Load_For_Object():
+    for i in range(len(my_data)):
+        if my_data[i]['type'] == 'documentary':
+            new_object = Documentary(my_data[i]['type'], my_data[i]['id'], my_data[i]['name'], my_data[i]['director'], my_data[i]['imdb'], my_data[i]['url'], my_data[i]['duration'], my_data[i]['episodes'], my_data[i]['casts'])
+            doc_object.append(new_object)
 
+doc_object = []
 class Documentary(Media):
     def __init__(self, type, id, name, d, imdb, url, du, epi, c):
         Media.__init__(self, type=type, id=id, name=name, d=d, imdb=imdb, url=url, du=du, c=c)
@@ -101,10 +107,4 @@ class Documentary(Media):
         else:
             print("Can't find this ID")
 
-
-
-doc_object = []
-for i in range(len(my_data)):
-    if my_data[i]['type'] == 'documentary':
-        new_object = Documentary(my_data[i]['type'], my_data[i]['id'], my_data[i]['name'], my_data[i]['director'], my_data[i]['imdb'], my_data[i]['url'], my_data[i]['duration'], my_data[i]['episodes'], my_data[i]['casts'])
-        doc_object.append(new_object)
+Load_For_Object()

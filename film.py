@@ -1,7 +1,13 @@
 import media
 from media import my_data
 from media import Media
+def Load_For_Object():
+    for i in range(len(my_data)):
+        if my_data[i]['type'] == 'film':
+            new_object = Film(my_data[i]['type'], my_data[i]['id'], my_data[i]['name'], my_data[i]['director'], my_data[i]['imdb'], my_data[i]['url'], my_data[i]['duration'], my_data[i]['casts'])
+            film_object.append(new_object)
 
+film_object = []
 class Film(Media):
     
     def __init__(self,type=None, id=0, name=None, d=None, imdb=0, url=None, du=0, c=None):
@@ -109,8 +115,4 @@ class Film(Media):
         elif c != 1:
             print('None!')
 
-film_object = []
-for i in range(len(my_data)):
-    if my_data[i]['type'] == 'film':
-        new_object = Film(my_data[i]['type'], my_data[i]['id'], my_data[i]['name'], my_data[i]['director'], my_data[i]['imdb'], my_data[i]['url'], my_data[i]['duration'], my_data[i]['casts'])
-        film_object.append(new_object)
+Load_For_Object()

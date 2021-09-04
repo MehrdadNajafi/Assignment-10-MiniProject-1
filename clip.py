@@ -1,8 +1,13 @@
-import media
 from media import my_data
 from media import Media
 
+def Load_For_Object():
+    for i in range(len(my_data)):
+        if my_data[i]['type'] == 'clip':
+            new_object = Clip(my_data[i]['type'], my_data[i]['id'], my_data[i]['name'], my_data[i]['director'], my_data[i]['url'], my_data[i]['duration'])
+            clip_object.append(new_object)
 
+clip_object = []
 class Clip(Media):
     def __init__(self, type, id, name, d, url, du):
         Media.__init__(self, type=type, id=id, name=name, d=d, url=url, du=du)
@@ -93,8 +98,4 @@ class Clip(Media):
         if c != 1:
             print("Can't find this ID !!!")
 
-clip_object = []
-for i in range(len(my_data)):
-    if my_data[i]['type'] == 'clip':
-        new_object = Clip(my_data[i]['type'], my_data[i]['id'], my_data[i]['name'], my_data[i]['director'], my_data[i]['url'], my_data[i]['duration'])
-        clip_object.append(new_object)
+Load_For_Object()
