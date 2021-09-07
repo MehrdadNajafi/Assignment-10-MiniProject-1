@@ -49,7 +49,8 @@ class Film(Media):
         
         name, director, imdb, url = media.get_input()
         duration = int(input('Please enter duration: '))
-        casts = input('Please enter casts: ')
+        casts = input('Please enter casts (cast 1, cast 2, ...): ')
+        casts = casts.split(',')
         new_object = Film('film', id, name , director, imdb, url, duration, casts)
         film_object.append(new_object)
         print('Done!')
