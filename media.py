@@ -147,6 +147,7 @@ class Media:
             print('Done!')
 
         elif user_choice == 7:
-            casts = input('Please enter casts')
+            casts = input('Please enter casts (cast 1, cast 2, ...): ')
+            casts = casts.split(',')
             self.casts = casts
             print('Done!')
